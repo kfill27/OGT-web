@@ -6,7 +6,8 @@ import Dialog from 'material-ui/Dialog';
 import EmailInput from './EmailInput';
 import PasswordInput from './PasswordInput';
 
-class SignUpForm extends React.Component {
+class SignInForm extends React.Component {
+  
   state = {
     open: false,
   };
@@ -35,11 +36,11 @@ class SignUpForm extends React.Component {
     ];
     return (
       <div>
-        <RaisedButton 
-          label="Sign Up Now"
-          primary={true}
+        <FlatButton 
           onTouchTap={this.handleOpen}
-        />
+        >
+          Already Have an Account? Sign in here.
+        </FlatButton>
         <Dialog
           title="Dialog With Actions"
           actions={actions}
@@ -56,4 +57,4 @@ class SignUpForm extends React.Component {
 
 }
 
-export default SignUpForm;
+export default SignInForm;
