@@ -4,8 +4,9 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Subheader from 'material-ui/Subheader';
+import { Link } from 'react-router-dom'
 
-import HomePage from './HomePage';
+import Main from './Main';
 
 class App extends Component {
   state = {open: false};
@@ -22,12 +23,12 @@ class App extends Component {
             onTouchTap={this.handleToggle}
           />
           <Drawer open={this.state.open}>
-            <Subheader>One Good Thing</Subheader>
-            <MenuItem>Blog</MenuItem>
-            <MenuItem>About</MenuItem>
-            <MenuItem>Contact</MenuItem>
+            <Link to='/'><Subheader>One Good Thing</Subheader></Link>
+            <Link to='/blog'><MenuItem>Blog</MenuItem></Link>
+            <Link to='/about'><MenuItem>About</MenuItem></Link>
+            <Link to='/contact'><MenuItem>Contact</MenuItem></Link>
           </Drawer>
-          <HomePage {...this.props}/>
+          <Main />
        </div>
       </MuiThemeProvider>
     );
