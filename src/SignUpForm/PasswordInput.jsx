@@ -9,6 +9,7 @@ class PasswordInput extends React.Component {
         <TextField
           hintText="Password"
           fullWidth={true}
+          type="password"
         />
       </div>
     );
