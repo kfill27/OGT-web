@@ -1,5 +1,4 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 
@@ -38,8 +37,10 @@ class SignInForm extends React.Component {
       <div>
         <FlatButton 
           onTouchTap={this.handleOpen}
+          label="Log In"
+          secondary={true}
         >
-          Already Have an Account? Sign in here.
+        
         </FlatButton>
         <Dialog
           title="Dialog With Actions"
