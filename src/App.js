@@ -35,6 +35,7 @@ class App extends Component {
             <Link to='/blog'><MenuItem>Blog</MenuItem></Link>
             <Link to='/about'><MenuItem>About</MenuItem></Link>
             <Link to='/contact'><MenuItem>Contact</MenuItem></Link>
+            <Link to='/good-things'><MenuItem>Good Things</MenuItem></Link>
           </Drawer>
           <Main />
        </div>
