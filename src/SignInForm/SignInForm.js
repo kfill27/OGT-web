@@ -19,6 +19,21 @@ class SignInForm extends React.Component {
     this.setState({open: false});
   };
   
+  handleSubmit = () => {
+    var myHeaders = new Headers();
+
+    var myInit = { method: 'POST',
+                   headers: myHeaders,
+                   mode: 'no-cors',
+                   cache: 'default' };
+
+    var myRequest = new Request('https://onegoodthing-api.herokuapp.com/authenticate', myInit);
+
+    fetch(myRequest).then(function(response) {
+      console.log('hereee', response);
+    });
+  };
+  
   render() {
     const actions = [
       <FlatButton
@@ -30,7 +45,7 @@ class SignInForm extends React.Component {
         label="Submit"
         primary={true}
         keyboardFocused={true}
-        onTouchTap={this.handleClose}
+        onTouchTap={this.handleSubmit}
       />,
     ];
     return (
@@ -39,9 +54,7 @@ class SignInForm extends React.Component {
           onTouchTap={this.handleOpen}
           label="Log In"
           secondary={true}
-        >
-        
-        </FlatButton>
+        />
         <Dialog
           title="Dialog With Actions"
           actions={actions}
@@ -49,8 +62,8 @@ class SignInForm extends React.Component {
           open={this.state.open}
           onRequestClose={this.handleClose}
         >
-        <EmailInput />
-        <PasswordInput />
+          <EmailInput />
+          <PasswordInput />
         </Dialog>
       </div>
     );
